@@ -1,0 +1,1027 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f7f3;
+    color: #111;
+}
+
+
+/* BARRA */
+
+#barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+}
+
+#barra.mostrar {
+    background: #061526;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+.logo {
+    color: white;
+    font-family: cursive;
+    font-size: 36px;
+    font-style: italic;
+    position: relative;
+    letter-spacing: -2px;
+}
+
+.flores {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -24px;
+    top: 0;
+}
+
+.flores i {
+    position: absolute;
+    width: 9px;
+    height: 14px;
+    border-radius: 70% 30% 70% 30%;
+}
+
+.flores .rojo {
+    background: #d71920;
+    top: 0;
+    left: 8px;
+    transform: rotate(20deg);
+}
+
+.flores .amarillo {
+    background: #f5c400;
+    top: 6px;
+    left: 1px;
+    transform: rotate(-35deg);
+}
+
+.flores .azul {
+    background: #0057a8;
+    top: 10px;
+    left: 9px;
+    transform: rotate(35deg);
+}
+
+
+/* =========================
+   BOTON HAMBURGUESA
+   ========================= */
+
+#menu-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 2000;
+}
+
+#menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+
+/* MENU */
+
+.menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #e7ae00;
+}
+
+
+/* MENU IDIOMA */
+
+.idioma {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+}
+
+.boton-idioma {
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-idioma:hover {
+    background: #e7ae00;
+    color: #111;
+}
+
+.opciones-idioma {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #061526;
+    min-width: 120px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: none;
+    z-index: 2000;
+}
+
+.idioma:hover .opciones-idioma {
+    display: block;
+}
+
+.opciones-idioma a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.opciones-idioma a:hover {
+    background: #e7ae00;
+    color: #111;
+}
+
+
+/* PORTADA */
+
+.portada {
+    height: 570px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.portada > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.capa {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.42);
+}
+
+.texto-portada {
+    position: absolute;
+    z-index: 2;
+    left: 7%;
+    top: 145px;
+}
+
+.texto-portada p {
+    font-family: cursive;
+    font-size: 35px;
+    font-style: italic;
+}
+
+.texto-portada h1 {
+    font-size: 68px;
+    line-height: 1;
+    text-shadow: 3px 3px 5px #222;
+}
+
+.texto-portada h2 {
+    font-size: 23px;
+    margin-top: 12px;
+}
+
+.texto-portada span {
+    display: block;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.curva {
+    position: absolute;
+    z-index: 5;
+    bottom: -1px;
+    left: -5%;
+    width: 110%;
+    height: 85px;
+    background: #f2f2f2;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+
+/* CONTENIDO */
+
+main {
+    background: #f2f2f2;
+    padding: 20px 30px 0;
+}
+
+.seccion {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px 0 35px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: #123b70;
+    font-size: 21px;
+    margin-bottom: 25px;
+}
+
+.titulo span {
+    width: 40px;
+    height: 3px;
+    background: #e8b400;
+}
+
+
+/* INTRODUCCION */
+
+.introduccion {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.texto {
+    background: #faf9f5;
+    border-radius: 14px;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
+
+.texto p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.texto p:last-child {
+    margin-bottom: 0;
+}
+
+.datos-moneda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.datos-moneda div {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 18px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.datos-moneda strong {
+    color: #123b70;
+    font-size: 13px;
+}
+
+.datos-moneda p {
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+
+/* HISTORIA */
+
+.historia {
+    max-width: 1000px;
+}
+
+.historia-intro {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+.historia-intro p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.historia-bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.bloque {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 22px;
+    transition: 0.3s;
+}
+
+.bloque:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.numero {
+    color: #e2ae00;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.bloque h3 {
+    color: #123b70;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.bloque p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.bloque p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* CARACTERISTICAS */
+
+.caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    text-align: center;
+    padding: 25px 18px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    background: #e8b400;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.card h3 {
+    color: #123b70;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.card p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+
+/* BILLETES Y MONEDAS */
+
+.billetes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.billete {
+    min-height: 190px;
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.billete h3 {
+    color: #123b70;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.billete p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.billete p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ACTUALIDAD */
+
+.actualidad-contenido {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.actualidad-contenido p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.actualidad-contenido p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* FINAL */
+
+.final {
+    position: relative;
+    min-height: 220px;
+    background: #061f3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.curva-final {
+    position: absolute;
+    top: -45px;
+    left: -5%;
+    width: 110%;
+    height: 80px;
+    background: #f2f2f3;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.final-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.final h2 {
+    color: #f2c000;
+    font-family: cursive;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.final p {
+    font-size: 14px;
+    margin: 8px 0 18px;
+}
+
+.final a {
+    display: inline-block;
+    background: #f3b900;
+    color: #111;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.final a:hover {
+    background: #ffd000;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+
+    #barra {
+        padding: 0 20px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a,
+    .boton-idioma {
+        font-size: 11px;
+        padding: 8px 7px;
+    }
+
+    .texto-portada h1 {
+        font-size: 55px;
+    }
+
+    .introduccion {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-bloques {
+        grid-template-columns: 1fr;
+    }
+
+    .caracteristicas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .billetes {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   MENU HAMBURGUESA
+   ========================= */
+
+@media (max-width: 700px) {
+
+    #barra {
+        height: 58px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .flores {
+        transform: scale(0.8);
+        right: -21px;
+    }
+
+
+    /* BOTON */
+
+    #menu-toggle {
+        display: flex;
+    }
+
+
+    /* MENU CERRADO */
+
+    .menu {
+        position: absolute;
+
+        top: 58px;
+        right: 10px;
+
+        width: 190px;
+
+        background: #061526;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px;
+
+        border-radius: 8px;
+
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition: 0.3s ease;
+
+        z-index: 1500;
+    }
+
+
+    /* MENU ABIERTO */
+
+    .menu.activo {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+
+    .menu a,
+    .boton-idioma {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        padding: 11px 8px;
+    }
+
+
+    .idioma {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    /* MENU IDIOMA */
+
+    .opciones-idioma {
+        position: static;
+        width: 100%;
+        min-width: 0;
+
+        margin-top: 3px;
+
+        display: none;
+
+        box-shadow: none;
+        border-radius: 5px;
+    }
+
+    .idioma:hover .opciones-idioma {
+        display: block;
+    }
+
+
+    /* ANIMACION HAMBURGUESA */
+
+    #menu-toggle.activo span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #menu-toggle.activo span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle.activo span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+
+    /* PORTADA */
+
+    .portada {
+        height: 520px;
+    }
+
+    .texto-portada {
+        left: 7%;
+        top: 125px;
+        max-width: 90%;
+    }
+
+    .texto-portada p {
+        font-size: 25px;
+    }
+
+    .texto-portada h1 {
+        font-size: 45px;
+    }
+
+    .texto-portada h2 {
+        font-size: 18px;
+    }
+
+    .texto-portada span {
+        font-size: 13px;
+    }
+
+    .curva {
+        height: 60px;
+    }
+
+
+    /* CONTENIDO */
+
+    main {
+        padding: 15px 15px 0;
+    }
+
+    .seccion {
+        padding: 20px 0 30px;
+    }
+
+    .titulo {
+        font-size: 18px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .titulo span {
+        width: 25px;
+    }
+
+
+    /* INTRODUCCION */
+
+    .introduccion {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .texto {
+        padding: 20px;
+    }
+
+    .texto p {
+        font-size: 13px;
+    }
+
+    .datos-moneda {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .datos-moneda div {
+        padding: 18px;
+    }
+
+
+    /* HISTORIA */
+
+    .historia {
+        width: 100%;
+    }
+
+    .historia-intro {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .historia-intro p {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .historia-bloques {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .bloque {
+        width: 100%;
+        padding: 20px;
+    }
+
+
+    /* CARACTERISTICAS */
+
+    .caracteristicas {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 22px 18px;
+    }
+
+
+    /* BILLETES */
+
+    .billetes {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .billete {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .billete h3 {
+        font-size: 17px;
+    }
+
+    .billete p {
+        font-size: 13px;
+    }
+
+
+    /* ACTUALIDAD */
+
+    .actualidad-contenido {
+        padding: 20px;
+    }
+
+    .actualidad-contenido p {
+        font-size: 13px;
+    }
+
+
+    /* FINAL */
+
+    .final {
+        min-height: 210px;
+    }
+
+    .final-texto {
+        padding: 30px 20px;
+    }
+
+    .final h2 {
+        font-size: 25px;
+    }
+
+    .final p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+   ========================= */
+
+@media (max-width: 450px) {
+
+    #barra {
+        padding: 0 7px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .flores {
+        right: -20px;
+        transform: scale(0.7);
+    }
+
+
+    #menu-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    #menu-toggle span {
+        width: 23px;
+        height: 3px;
+    }
+
+
+    .menu {
+        right: 7px;
+        width: 180px;
+    }
+
+    .menu a,
+    .boton-idioma {
+        font-size: 11px;
+        padding: 10px 7px;
+    }
+
+
+    .opciones-idioma {
+        top: 40px;
+        min-width: 90px;
+    }
+
+    .opciones-idioma a {
+        font-size: 9px;
+        padding: 8px;
+    }
+
+
+    /* PORTADA */
+
+    .portada {
+        height: 500px;
+    }
+
+    .texto-portada {
+        top: 120px;
+    }
+
+    .texto-portada p {
+        font-size: 22px;
+    }
+
+    .texto-portada h1 {
+        font-size: 38px;
+    }
+
+    .texto-portada h2 {
+        font-size: 16px;
+    }
+
+    .texto-portada span {
+        font-size: 11px;
+    }
+
+
+    /* CONTENIDO */
+
+    .titulo {
+        font-size: 16px;
+    }
+
+    .texto {
+        padding: 18px;
+    }
+
+    .datos-moneda {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-bloques {
+        grid-template-columns: 1fr;
+    }
+
+    .caracteristicas {
+        grid-template-columns: 1fr;
+    }
+
+    .billetes {
+        grid-template-columns: 1fr;
+    }
+
+    .bloque {
+        padding: 18px;
+    }
+
+    .card {
+        padding: 20px 15px;
+    }
+
+    .billete {
+        padding: 18px;
+    }
+
+    .actualidad-contenido {
+        padding: 18px;
+    }
+
+    .final h2 {
+        font-size: 22px;
+    }
+
+}

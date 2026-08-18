@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Música de Colombia</title>
+  <link rel="stylesheet" href="../CSS/musica.CSS">
+  <link rel="icon" href="../IMG/world.png"  type="image/x-icon">
+
+  <!-- Iconos -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="barra">
+
+    <div class="logo">
+        Colombia
+
+        <span class="flores">
+            <i class="rojo"></i>
+            <i class="amarillo"></i>
+            <i class="azul"></i>
+            <i class="verde"></i>
+        </span>
+    </div>
+
+    <div class="menu">
+
+        <a href="../index.html" class="inicio">
+            INICIO
+        </a>
+
+        <a href="cultura.html" class="cultura">
+            CULTURA
+        </a>
+
+        <a href="../HTML/turismo.html" class="turismo">
+            TURISMO
+        </a>
+
+        <div class="idioma">
+
+            <button class="boton-idioma">
+                IDIOMA
+            </button>
+
+            <div class="opciones-idioma">
+
+                <a href="musica.html">
+                    ESPAÑOL
+                </a>
+
+                <a href="../HTML/musica-i.html">
+                    ENGLISH
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</nav>
+
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="label">RITMO · CULTURA · TRADICIÓN</p>
+
+      <h1>
+        Música<br>
+        de Colombia
+      </h1>
+
+      <p>
+        El ritmo que representa<br>
+        el corazón de <b>Colombia</b>
+      </p>
+
+      <a href="#musica" class="btn">Conoce más</a>
+    </div>
+  </section>
+
+
+  <!-- SOBRE LA MÚSICA -->
+  <section id="musica" class="about">
+
+    <p class="section-label">SOBRE NUESTRA MÚSICA</p>
+
+    <h2>Una cultura que suena</h2>
+
+    <p class="description">
+      La música colombiana es una mezcla de culturas,
+      tradiciones y ritmos que forman parte de la identidad del país.
+    </p>
+
+    <div class="info">
+
+      <div>
+        <span>🎶</span>
+        <h3>Ritmos</h3>
+        <p>
+          Cumbia, vallenato,<br>
+          salsa y muchos más.
+        </p>
+      </div>
+
+      <div>
+        <span>🇨🇴</span>
+        <h3>Origen</h3>
+        <p>
+          Caribe, Pacífico,<br>
+          Andes y otras regiones.
+        </p>
+      </div>
+
+      <div>
+        <span>🥁</span>
+        <h3>Tradición</h3>
+        <p>
+          Música, baile,<br>
+          cultura y celebración.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- GÉNEROS -->
+  <section id="generos" class="events">
+
+    <p class="section-label">RITMOS COLOMBIANOS</p>
+
+    <h2>Descubre nuestros géneros</h2>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="photo cumbia"></div>
+        <h3>Cumbia</h3>
+      </article>
+
+      <article class="card">
+        <div class="photo vallenato"></div>
+        <h3>Vallenato</h3>
+      </article>
+
+      <article class="card">
+        <div class="photo salsa"></div>
+        <h3>Salsa</h3>
+      </article>
+
+      <article class="card">
+        <div class="photo pacifico"></div>
+        <h3>Música del Pacífico</h3>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ARTISTAS -->
+  <section id="artistas" class="artists">
+
+    <p class="section-label">VOCES DE COLOMBIA</p>
+
+    <h2>Artistas que hacen historia</h2>
+
+    <div class="artist-list">
+
+      <div class="artist">
+        <div class="artist-icon">🎤</div>
+        <h3>Shakira</h3>
+        <p>Pop · Barranquilla</p>
+      </div>
+
+      <div class="artist">
+        <div class="artist-icon">🎸</div>
+        <h3>Carlos Vives</h3>
+        <p>Vallenato · Pop</p>
+      </div>
+
+      <div class="artist">
+        <div class="artist-icon">🎹</div>
+        <h3>Joe Arroyo</h3>
+        <p>Salsa · Caribe</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section id="contacto" class="cta">
+
+    <div>
+      <h2>
+        Colombia suena,<br>
+        y tú puedes sentirla.
+      </h2>
+    </div>
+
+    <a href="#" class="btn light">
+      Explora nuestra música
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+ <footer>
+
+        <h2 id="h2">Colombia, un país lleno de cultura y tradición.</h2>
+
+        <p>
+            Feria de Inglés - Colombia - Desarrollado por alumnos de B1DB
+        </p>
+
+ </footer>
+
+    <script>
+    (function () {
+
+        const botonHamburguesaMU = document.getElementById("menu-toggle");
+        const menuNavegacionMU = document.querySelector("#barra .menu");
+
+        if (!botonHamburguesaMU || !menuNavegacionMU) return;
+
+        botonHamburguesaMU.addEventListener("click", (evento) => {
+            evento.stopPropagation();
+            menuNavegacionMU.classList.toggle("activo");
+        });
+
+        menuNavegacionMU.querySelectorAll("a").forEach((enlace) => {
+            enlace.addEventListener("click", () => {
+                menuNavegacionMU.classList.remove("activo");
+            });
+        });
+
+        document.addEventListener("click", (evento) => {
+            const clicFuera = !menuNavegacionMU.contains(evento.target) && !botonHamburguesaMU.contains(evento.target);
+
+            if (clicFuera) {
+                menuNavegacionMU.classList.remove("activo");
+            }
+        });
+
+    })();
+    </script>
+
+</body>
+</html>

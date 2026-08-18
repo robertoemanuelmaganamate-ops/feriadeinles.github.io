@@ -1,0 +1,930 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #302044;
+  background: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================
+   ESPACIO PARA TU NAVBAR
+========================= */
+
+/* ===================================
+        NAVBAR
+   =================================== */
+
+#barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+
+    /* Transparente al inicio */
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    z-index: 1000;
+
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+/* ===================================
+      NAVBAR AL HACER SCROLL
+   =================================== */
+
+#barra.mostrar {
+    background: #061526;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+
+/* ===================================
+        LOGO
+   =================================== */
+
+#barra .logo {
+    color: white;
+    font-family: cursive;
+    font-size: 36px;
+    font-style: italic;
+
+    position: relative;
+
+    letter-spacing: -2px;
+}
+
+
+/* ===================================
+        FLORES DEL LOGO
+   =================================== */
+
+#barra .flores {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    right: -24px;
+    top: 0;
+}
+
+#barra .flores i {
+    position: absolute;
+
+    width: 9px;
+    height: 14px;
+
+    border-radius: 70% 30% 70% 30%;
+}
+
+
+/* ROJO */
+
+#barra .rojo {
+    background: #d71920;
+
+    top: 0;
+    left: 8px;
+
+    transform: rotate(20deg);
+}
+
+
+/* AMARILLO */
+
+#barra .amarillo {
+    background: #f5c400;
+
+    top: 6px;
+    left: 1px;
+
+    transform: rotate(-35deg);
+}
+
+
+/* AZUL */
+
+#barra .azul {
+    background: #0057a8;
+
+    top: 10px;
+    left: 9px;
+
+    transform: rotate(35deg);
+}
+
+
+/* VERDE */
+
+#barra .verde {
+    background: #149447;
+
+    top: 13px;
+    left: 17px;
+
+    transform: rotate(55deg);
+}
+
+
+/* ===================================
+        MENU
+   =================================== */
+
+#barra .menu {
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+    flex-direction: row;
+}
+
+
+/* ENLACES */
+
+#barra .menu > a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+
+/* HOVER */
+
+#barra .menu > a:hover {
+    background: #e7ae00;
+
+    color: white;
+}
+
+
+/* CULTURA ACTIVA */
+
+#barra .menu .cultura {
+    background: rgb(13, 23, 104);
+
+    color: #fff;
+}
+
+
+/* ===================================
+        BOTON IDIOMA
+   =================================== */
+
+.idioma {
+    position: relative;
+}
+
+
+/* BOTÓN */
+
+.boton-idioma {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* HOVER BOTÓN */
+
+.boton-idioma:hover {
+    background: #e7ae00;
+
+    color: white;
+}
+
+
+/* ===================================
+        OPCIONES DE IDIOMA
+   =================================== */
+
+.opciones-idioma {
+    position: absolute;
+
+    top: 100%;
+    right: 0;
+
+    min-width: 130px;
+
+    background: #061526;
+
+    border-radius: 5px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition: 0.3s;
+}
+
+
+/* MOSTRAR OPCIONES */
+
+.idioma:hover .opciones-idioma {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ENLACES DEL IDIOMA */
+
+.opciones-idioma a {
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* HOVER OPCIONES */
+
+.opciones-idioma a:hover {
+    background: #e7ae00;
+
+    color: white;
+}
+
+
+/* ===================================
+        NAVBAR RESPONSIVE
+   =================================== */
+
+@media (max-width: 700px) {
+
+    #barra {
+        padding: 0 15px;
+
+        height: 58px;
+    }
+
+    #barra .logo {
+        font-size: 27px;
+    }
+
+    #barra .menu {
+        gap: 4px;
+    }
+
+    #barra .menu > a,
+    .boton-idioma {
+        font-size: 9px;
+
+        padding: 7px 5px;
+    }
+
+}
+
+/* =========================
+   BOTÓN MENÚ HAMBURGUESA
+========================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   MENÚ HAMBURGUESA EN CELULAR
+   (con !important para que gane
+   siempre sobre #barra .menu { display:flex })
+========================= */
+
+@media (max-width: 700px) {
+
+    #barra {
+        background: #061526 !important;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        z-index: 1100;
+    }
+
+    #barra .menu {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+        background: #061526;
+        z-index: 1000;
+    }
+
+    #barra .menu.activo {
+        display: flex !important;
+    }
+
+    #barra .menu > a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn {
+  display: inline-block;
+
+  padding: 13px 27px;
+
+  background: #552587;
+  color: white;
+
+  border-radius: 25px;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3d1b62;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 570px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 60px 8%;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.96) 0%,
+      rgba(255,255,255,.82) 42%,
+      rgba(255,255,255,.12) 100%
+    ),
+
+    url("https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.label {
+  color: #d13b91;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  color: #382067;
+
+  font-size: clamp(50px, 7vw, 78px);
+
+  line-height: .98;
+
+  margin-bottom: 25px;
+}
+
+.hero p:not(.label) {
+  font-size: 21px;
+
+  line-height: 1.5;
+
+  color: #333;
+
+  margin-bottom: 30px;
+}
+
+.hero p b {
+  color: #552587;
+}
+
+
+/* =========================
+   SOBRE EL ARTE
+========================= */
+
+.about {
+  padding: 75px 8%;
+
+  text-align: center;
+
+  background: white;
+}
+
+.section-label {
+  color: #d13b91;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 8px;
+}
+
+h2 {
+  color:#40216c;
+
+  font-size: 32px;
+
+  margin-bottom: 15px;
+}
+
+#h2 {
+    color:#fff;
+}
+
+.description {
+  max-width: 700px;
+
+  margin: auto;
+
+  color: #555;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.info {
+  max-width: 900px;
+
+  margin: 45px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.info > div {
+  padding: 10px 35px;
+
+  border-right: 1px solid #ddd;
+}
+
+.info > div:last-child {
+  border-right: 0;
+}
+
+.info span {
+  display: block;
+
+  font-size: 35px;
+
+  margin-bottom: 10px;
+}
+
+.info h3 {
+  color: #3f216c;
+
+  margin-bottom: 8px;
+}
+
+.info p {
+  color: #555;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   EXPRESIONES ARTÍSTICAS
+========================= */
+
+.features {
+  padding: 75px 5%;
+
+  text-align: center;
+
+  background: #f8f3fb;
+}
+
+.cards {
+  max-width: 1100px;
+
+  margin: 40px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.card {
+  padding: 35px 25px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px rgba(50,20,70,.10);
+
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eee2f7;
+
+  font-size: 32px;
+}
+
+.card h3 {
+  color: #40216c;
+
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #666;
+
+  line-height: 1.6;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   ARTISTAS
+========================= */
+
+.artists {
+  padding: 75px 8%;
+
+  text-align: center;
+
+  background: white;
+}
+
+.artist-list {
+  max-width: 950px;
+
+  margin: 40px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.artist {
+  padding: 30px 20px;
+
+  border-radius: 15px;
+
+  background: #faf7fc;
+
+  transition: .3s;
+}
+
+.artist:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 8px 25px rgba(50,20,70,.10);
+}
+
+.artist-icon {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: #eee2f7;
+
+  font-size: 32px;
+}
+
+.artist h3 {
+  color: #3f216c;
+
+  margin-bottom: 10px;
+}
+
+.artist p {
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   GALERÍA
+========================= */
+
+.gallery {
+  padding: 75px 6%;
+
+  text-align: center;
+
+  background: #f8f3fb;
+}
+
+.gallery-grid {
+  max-width: 1100px;
+
+  margin: 40px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.gallery-item {
+  height: 240px;
+
+  border-radius: 14px;
+
+  background-size: cover;
+
+  background-position: center;
+
+  transition: .3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+
+/* IMÁGENES DE GALERÍA */
+
+.image-one {
+  background-image:
+    url("https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=700&q=80");
+}
+
+.image-two {
+  background-image:
+    url("https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=700&q=80");
+}
+
+.image-three {
+  background-image:
+    url("https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=700&q=80");
+}
+
+.image-four {
+  background-image:
+    url("https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=80");
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  min-height: 190px;
+
+  padding: 40px 10%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #542482;
+
+  color: white;
+}
+
+.cta h2 {
+  color: white;
+
+  margin: 0;
+}
+
+.btn.light {
+  background: white;
+
+  color: #542482;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 22px;
+
+  text-align: center;
+
+  background: #29153f;
+
+  color: #ddd;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .info > div {
+    border-right: 0;
+
+    border-bottom: 1px solid #ddd;
+
+    padding: 25px;
+  }
+
+  .info > div:last-child {
+    border-bottom: 0;
+  }
+
+  .artist-list {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 560px;
+
+    padding: 50px 7%;
+
+    background:
+
+      linear-gradient(
+        rgba(255,255,255,.82),
+        rgba(255,255,255,.82)
+      ),
+
+      url("https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+
+  .cta {
+    flex-direction: column;
+
+    gap: 25px;
+
+    text-align: center;
+  }
+}

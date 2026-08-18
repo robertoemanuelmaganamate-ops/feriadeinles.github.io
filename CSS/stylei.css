@@ -1,0 +1,886 @@
+/* ==================================================
+   CONFIGURACION GENERAL
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f7f3;
+    color: #111;
+}
+
+
+/* ==================================================
+   BARRA DE NAVEGACION
+   ================================================== */
+
+#barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+    transition: background 0.05s;
+    box-shadow: none;
+}
+
+#barra.mostrar {
+    background: #061526;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+
+/* ==================================================
+   LOGO
+   ================================================== */
+
+.logo {
+    color: white;
+    font-family: cursive;
+    font-size: 36px;
+    font-style: italic;
+    position: relative;
+    letter-spacing: -2px;
+}
+
+.flores {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -24px;
+    top: 0;
+}
+
+.flores i {
+    position: absolute;
+    width: 9px;
+    height: 14px;
+    border-radius: 70% 30% 70% 30%;
+}
+
+.rojo {
+    background: #d71920;
+    top: 0;
+    left: 8px;
+    transform: rotate(20deg);
+}
+
+.amarillo {
+    background: #f5c400;
+    top: 6px;
+    left: 1px;
+    transform: rotate(-35deg);
+}
+
+.azul {
+    background: #0057a8;
+    top: 10px;
+    left: 9px;
+}
+
+.verde {
+    background: #149447;
+    top: 13px;
+    left: 17px;
+}
+
+
+/* ==================================================
+   MENU PRINCIPAL
+   ================================================== */
+
+.menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #e7ae00;
+}
+
+.menu .inicio {
+    background: #f4bd00;
+    color: #111;
+}
+
+
+/* ==================================================
+   MENU DE IDIOMA
+   ================================================== */
+
+.idioma {
+    position: relative;
+}
+
+.boton-idioma {
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-idioma:hover {
+    background: #e7ae00;
+    color: #111;
+}
+
+.opciones-idioma {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #061526;
+    min-width: 120px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: none;
+}
+
+.idioma:hover .opciones-idioma {
+    display: block;
+}
+
+.opciones-idioma a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.opciones-idioma a:hover {
+    background: #e7ae00;
+    color: #111;
+}
+
+
+/* ==================================================
+   BOTON HAMBURGUESA
+   ================================================== */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/* ==================================================
+   PORTADA
+   ================================================== */
+
+.portada {
+    height: 620px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.imagen-portada {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.35)
+        ),
+        url("../IMG/colombia\ 1.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* ==================================================
+   TEXTO DE PORTADA
+   ================================================== */
+
+.texto-portada {
+    position: absolute;
+    z-index: 2;
+    left: 7%;
+    top: 120px;
+    width: 450px;
+}
+
+.bienvenida {
+    font-family: cursive;
+    font-style: italic;
+    font-size: 42px;
+    margin-bottom: -5px;
+}
+
+.texto-portada h1 {
+    font-size: 68px;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 3px 3px 4px #222;
+}
+
+.texto-portada h2 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.texto-portada h2 span {
+    color: #ffd000;
+}
+
+.descripcion {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-top: 18px;
+    width: 330px;
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   CURVA PORTADA
+   ================================================== */
+
+.curva-portada {
+    position: absolute;
+    z-index: 5;
+    bottom: -1px;
+    left: -5%;
+    width: 110%;
+    height: 90px;
+    background: #f2f2f2;
+
+    border-radius:
+        50% 50% 0 0 /
+        100% 100% 0 0;
+}
+
+
+/* ==================================================
+   CONTENIDO
+   ================================================== */
+
+main {
+    background: #f2f2f2;
+    padding: 20px 30px 0;
+}
+
+.seccion {
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px 0 30px;
+}
+
+
+/* ==================================================
+   TITULOS
+   ================================================== */
+
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: #123b70;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion span {
+    width: 40px;
+    height: 3px;
+    background: #e8b400;
+    display: block;
+}
+
+
+/* ==================================================
+   DATOS GENERALES
+   ================================================== */
+
+.datos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: stretch;
+}
+
+
+/* ==================================================
+   TARJETAS
+   ================================================== */
+
+.dato {
+    min-height: 125px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    text-align: center;
+    padding: 10px;
+    background: #faf9f5;
+    overflow: hidden;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #111;
+    display: block;
+}
+
+.dato:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+
+/* ==================================================
+   ICONOS
+   ================================================== */
+
+.icono {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e6ae00;
+    color: white;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.icono.azul {
+    background: #1976b9;
+}
+
+.icono.verde {
+    background: #319329;
+}
+
+.icono.morado {
+    background: #c0b6b6;
+}
+
+.dato h3 {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.dato p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* ==================================================
+   DESTINOS
+   ================================================== */
+
+.destinos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.destino {
+    text-align: center;
+    text-decoration: none;
+    color: #111;
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.destino:hover {
+    border: 2px solid #ffd000;
+    transform: translateY(-5px);
+    background: white;
+    border-radius: 0 5px 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.destino img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.destino h3 {
+    color: #143d70;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.destino p {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+
+/* ==================================================
+   PARTE FINAL
+   ================================================== */
+
+.final {
+    position: relative;
+    min-height: 200px;
+    background: #061f3e;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.curva-final {
+    position: absolute;
+    top: -45px;
+    left: -5%;
+    width: 110%;
+    height: 80px;
+    background: #f8f7f3;
+
+    border-radius:
+        0 0 50% 50% /
+        0 0 100% 100%;
+}
+
+.final-texto {
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
+}
+
+.final h2 {
+    font-family: cursive;
+    color: #f2c000;
+    font-size: 28px;
+    font-style: italic;
+}
+
+.final p {
+    font-size: 15px;
+    margin: 5px 0 15px;
+}
+
+.final button {
+    border: none;
+    background: #f3b900;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   PLANTAS
+   ================================================== */
+
+.plantas {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0.8;
+}
+
+.izquierda {
+    left: -15px;
+    bottom: -25px;
+}
+
+.derecha {
+    right: -15px;
+    bottom: -25px;
+}
+
+
+/* ==================================================
+   TABLETS
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    #barra {
+        padding: 0 20px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a,
+    .boton-idioma {
+        font-size: 11px;
+        padding: 8px 7px;
+    }
+
+    .texto-portada h1 {
+        font-size: 55px;
+    }
+
+    .datos,
+    .destinos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==================================================
+   CELULARES
+   TODO EN UNA SOLA COLUMNA
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    #barra {
+        height: 58px;
+        padding: 0 15px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .flores {
+        transform: scale(0.8);
+        right: -21px;
+    }
+
+
+    /* HAMBURGUESA */
+
+    .menu-toggle {
+        display: block;
+        z-index: 1100;
+    }
+
+
+    /* MENU */
+
+    .menu {
+        position: absolute;
+        top: 58px;
+        right: 15px;
+
+        width: 220px;
+
+        background: #061526;
+
+        display: none;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px;
+
+        border-radius: 0 0 10px 10px;
+
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+
+    .menu.activo {
+        display: flex;
+    }
+
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        padding: 12px;
+        border-radius: 5px;
+    }
+
+
+    /* IDIOMA */
+
+    .idioma {
+        width: 100%;
+    }
+
+    .boton-idioma {
+        width: 100%;
+        font-size: 12px;
+        padding: 12px;
+    }
+
+
+    .opciones-idioma {
+        position: static;
+        width: 100%;
+        min-width: 0;
+
+        border-radius: 5px;
+
+        box-shadow: none;
+
+        background: #09233d;
+    }
+
+
+    .idioma:hover .opciones-idioma {
+        display: block;
+    }
+
+
+    .opciones-idioma a {
+        font-size: 11px;
+        text-align: center;
+        padding: 10px;
+    }
+
+
+    /* PORTADA */
+
+    .portada {
+        height: 520px;
+    }
+
+
+    .texto-portada {
+        left: 7%;
+        top: 125px;
+        width: 85%;
+    }
+
+    .bienvenida {
+        font-size: 27px;
+    }
+
+    .texto-portada h1 {
+        font-size: 45px;
+    }
+
+    .texto-portada h2 {
+        font-size: 18px;
+    }
+
+    .descripcion {
+        width: 100%;
+        font-size: 13px;
+    }
+
+
+    /* CONTENIDO */
+
+    main {
+        padding: 15px 15px 0;
+    }
+
+    .seccion {
+        width: 100%;
+        padding: 20px 0 30px;
+    }
+
+
+    /* TITULOS */
+
+    .titulo-seccion {
+        font-size: 18px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .titulo-seccion span {
+        width: 25px;
+    }
+
+
+    /* DATOS
+       UNO DEBAJO DEL OTRO */
+
+    .datos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .dato {
+        width: 100%;
+        min-height: 125px;
+    }
+
+
+    /* DESTINOS
+       UNO DEBAJO DEL OTRO */
+
+    .destinos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .destino {
+        width: 100%;
+    }
+
+    .destino img {
+        height: 200px;
+    }
+
+
+    /* FINAL */
+
+    .final {
+        min-height: 210px;
+    }
+
+    .final-texto {
+        padding: 30px 20px;
+    }
+
+    .final h2 {
+        font-size: 25px;
+    }
+
+    .final p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==================================================
+   CELULARES PEQUEÑOS
+   ================================================== */
+
+@media (max-width: 450px) {
+
+    #barra {
+        padding: 0 10px;
+    }
+
+
+    .logo {
+        font-size: 23px;
+    }
+
+
+    .flores {
+        right: -20px;
+        transform: scale(0.7);
+    }
+
+
+    .menu {
+        right: 10px;
+        width: calc(100% - 20px);
+    }
+
+
+    .menu a {
+        font-size: 11px;
+        padding: 11px;
+    }
+
+
+    .boton-idioma {
+        font-size: 11px;
+        padding: 11px;
+    }
+
+
+    .portada {
+        height: 500px;
+    }
+
+
+    .texto-portada {
+        top: 120px;
+        left: 7%;
+        width: 88%;
+    }
+
+
+    .bienvenida {
+        font-size: 22px;
+    }
+
+
+    .texto-portada h1 {
+        font-size: 38px;
+    }
+
+
+    .texto-portada h2 {
+        font-size: 16px;
+    }
+
+
+    .descripcion {
+        font-size: 11px;
+    }
+
+
+    .titulo-seccion {
+        font-size: 16px;
+    }
+
+
+    .titulo-seccion span {
+        width: 20px;
+    }
+
+
+    .dato {
+        min-height: 120px;
+    }
+
+
+    .destino img {
+        height: 180px;
+    }
+
+
+    .final h2 {
+        font-size: 22px;
+    }
+
+}

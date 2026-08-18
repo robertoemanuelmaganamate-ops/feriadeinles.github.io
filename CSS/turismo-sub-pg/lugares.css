@@ -1,0 +1,1140 @@
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f8f7f3;
+
+    color: #111;
+
+}
+
+
+/* ==================================================
+   BARRA DE NAVEGACION
+   Al inicio es transparente
+   ================================================== */
+
+#barra {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 64px;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    z-index: 1000;
+
+    transition: background 0.5s;
+
+    box-shadow: none;
+
+}
+
+
+/* ==================================================
+   BARRA CUANDO SE HACE SCROLL
+   ================================================== */
+
+#barra.mostrar {
+
+    background: #061526;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+
+}
+
+.logo {
+
+    color: white;
+
+    font-family: cursive;
+
+    font-size: 36px;
+
+    font-style: italic;
+
+    position: relative;
+
+    letter-spacing: -2px;
+
+}
+
+
+.flores {
+
+    position: absolute;
+
+    width: 25px;
+
+    height: 25px;
+
+    right: -24px;
+
+    top: 0;
+
+}
+
+
+.flores i {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 14px;
+
+    border-radius: 70% 30% 70% 30%;
+
+}
+
+
+.rojo {
+
+    background: #d71920;
+
+    top: 0;
+
+    left: 8px;
+
+    transform: rotate(20deg);
+
+}
+
+
+.amarillo {
+
+    background: #f5c400;
+
+    top: 6px;
+
+    left: 1px;
+
+    transform: rotate(-35deg);
+
+}
+
+
+#barra .azul {
+    background: #0057a8;
+
+    top: 10px;
+    left: 9px;
+
+    transform: rotate(35deg);
+}
+
+.menu {
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+}
+
+
+.menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+}
+
+
+.menu a:hover {
+
+    background: #e7ae00;
+
+}
+
+
+.menu .turismo {
+
+    background: #f4bd00;
+
+    color: #111;
+
+}
+
+
+/* MENU DE IDIOMA */
+
+.idioma {
+
+    position: relative;
+
+    padding-bottom: 10px;
+
+}
+
+
+.boton-idioma {
+
+    color: white;
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.boton-idioma:hover {
+
+    background: #e7ae00;
+
+    color: #111;
+
+}
+
+
+.opciones-idioma {
+
+    position: absolute;
+
+    top: 40px;
+
+    right: 0;
+
+    background: #061526;
+
+    min-width: 120px;
+
+    border-radius: 6px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    overflow: hidden;
+
+    display: none;
+
+}
+
+
+.idioma:hover .opciones-idioma {
+
+    display: block;
+
+}
+
+
+.opciones-idioma a {
+
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 14px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.opciones-idioma a:hover {
+
+    background: #e7ae00;
+
+    color: #111;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.lugar-hero {
+    height: 430px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.lugar-hero img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* OSCURECER IMAGEN */
+
+.lugar-hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .28);
+}
+
+
+/* TEXTO */
+
+.lugar-overlay {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    color: white;
+}
+
+.lugar-overlay h1 {
+    font-family: cursive;
+
+    font-style: italic;
+
+    font-size: 65px;
+
+    text-shadow: 3px 3px 5px #222;
+}
+
+.lugar-overlay p {
+    margin-top: 18px;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    text-shadow: 2px 2px 4px #222;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido-lugar {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 45px 30px;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.titulo-lugar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.titulo-lugar span {
+    width: 65px;
+
+    height: 2px;
+
+    background: #438b28;
+}
+
+.titulo-lugar h2 {
+    color: #438b28;
+
+    font-size: 22px;
+
+    text-align: center;
+}
+
+.titulo-lugar i {
+    margin-right: 6px;
+}
+
+
+/* =========================
+   INTRODUCCIÓN
+========================= */
+
+.introduccion {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    margin-bottom: 45px;
+}
+
+
+.texto h3 {
+    color: #173d20;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.texto p {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+
+    color: #444;
+}
+
+
+.imagen-secundaria img {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+
+/* =========================
+   DATOS
+========================= */
+
+.datos-lugar {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 55px;
+}
+
+.dato {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px 15px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+}
+
+.dato i {
+    font-size: 32px;
+
+    color: #438b28;
+
+    margin-bottom: 12px;
+}
+
+.dato h3 {
+    font-size: 13px;
+
+    color: #173d20;
+
+    margin-bottom: 8px;
+}
+
+.dato p {
+    font-size: 12px;
+
+    color: #555;
+}
+
+
+/* =========================
+   ACTIVIDADES
+========================= */
+
+.actividades-lugar {
+    margin-bottom: 55px;
+}
+
+.actividad-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.actividad-cards article {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+
+    transition: .3s;
+}
+
+.actividad-cards article:hover {
+    transform: translateY(-5px);
+}
+
+.actividad-cards i {
+    font-size: 38px;
+
+    color: #176298;
+
+    margin-bottom: 15px;
+}
+
+.actividad-cards h3 {
+    color: #176298;
+
+    margin-bottom: 10px;
+}
+
+.actividad-cards p {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+
+/* =========================
+   POR QUÉ VISITAR
+========================= */
+
+.porque-lugar {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.porque-lugar > p {
+    max-width: 850px;
+
+    margin: auto;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* =========================
+   BOTÓN VOLVER
+========================= */
+
+.volver {
+    text-align: center;
+
+    margin: 35px 0;
+}
+
+.volver a {
+    display: inline-block;
+
+    background: #438b28;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.volver a:hover {
+    background: #2e6d1d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    min-height: 150px;
+
+    background: #075719;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px 30px;
+
+    border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+}
+
+.footer h2 {
+    font-family: cursive;
+
+    font-style: italic;
+
+    font-size: 35px;
+}
+
+.footer p {
+    font-family: cursive;
+
+    font-style: italic;
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   RESPONSIVE - LUGARES
+========================================= */
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+    /* ---------- HEADER ---------- */
+
+    .header {
+        padding: 15px 25px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+
+    /* ---------- BANNER ---------- */
+
+    .lugar-hero {
+        height: 480px;
+    }
+
+    .lugar-overlay {
+        padding: 30px;
+    }
+
+    .lugar-overlay h1 {
+        font-size: 52px;
+    }
+
+    .lugar-overlay p {
+        font-size: 17px;
+    }
+
+
+    /* ---------- CONTENIDO ---------- */
+
+    .contenido-lugar {
+        padding: 45px 30px;
+    }
+
+
+    /* ---------- TÍTULOS ---------- */
+
+    .titulo-lugar {
+        gap: 15px;
+    }
+
+    .titulo-lugar span {
+        width: 55px;
+    }
+
+    .titulo-lugar h2 {
+        font-size: 21px;
+    }
+
+
+    /* ---------- INTRODUCCIÓN ---------- */
+
+    .introduccion {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .texto h3 {
+        font-size: 25px;
+    }
+
+    .texto p {
+        font-size: 15px;
+    }
+
+    .imagen-secundaria img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+
+    /* ---------- DATOS ---------- */
+
+    .datos-lugar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* ---------- ACTIVIDADES ---------- */
+
+    .actividad-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .actividad-cards article {
+        padding: 25px 15px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- HEADER ---------- */
+
+    .header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .menu a {
+        font-size: 10px;
+        padding: 7px 5px;
+    }
+
+
+    /* ---------- BANNER ---------- */
+
+    .lugar-hero {
+        height: 400px;
+    }
+
+    .lugar-overlay {
+        padding: 20px;
+    }
+
+    .lugar-overlay h1 {
+        font-size: 38px;
+        line-height: 1.05;
+    }
+
+    .lugar-overlay p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+
+    /* ---------- CONTENIDO ---------- */
+
+    .contenido-lugar {
+        padding: 35px 15px;
+    }
+
+
+    /* ---------- TÍTULOS ---------- */
+
+    .titulo-lugar {
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .titulo-lugar span {
+        width: 30px;
+        height: 2px;
+    }
+
+    .titulo-lugar h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+
+    /* ---------- INTRODUCCIÓN ---------- */
+
+    .introduccion {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .texto h3 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .texto p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .imagen-secundaria {
+        width: 100%;
+    }
+
+    .imagen-secundaria img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+
+    /* ---------- DATOS ---------- */
+
+    .datos-lugar {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .dato {
+        padding: 20px 10px;
+    }
+
+    .dato i {
+        font-size: 25px;
+    }
+
+    .dato h3 {
+        font-size: 14px;
+    }
+
+    .dato p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+
+    /* ---------- ACTIVIDADES ---------- */
+
+    .actividades-lugar {
+        margin-top: 40px;
+    }
+
+    .actividad-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .actividad-cards article {
+        padding: 25px 20px;
+        min-height: 180px;
+    }
+
+    .actividad-cards article i {
+        font-size: 30px;
+    }
+
+    .actividad-cards article h3 {
+        font-size: 17px;
+    }
+
+    .actividad-cards article p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- POR QUÉ VISITAR ---------- */
+
+    .porque-lugar {
+        margin-top: 40px;
+        padding: 25px 15px;
+    }
+
+    .porque-lugar p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+
+    /* ---------- BOTÓN VOLVER ---------- */
+
+    .volver {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .volver a {
+        display: inline-block;
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        min-height: 180px;
+        padding: 35px 20px;
+        text-align: center;
+    }
+
+    .footer h2 {
+        font-size: 30px;
+    }
+
+    .footer p {
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .lugar-hero {
+        height: 350px;
+    }
+
+    .lugar-overlay h1 {
+        font-size: 32px;
+    }
+
+    .lugar-overlay p {
+        font-size: 13px;
+    }
+
+    .titulo-lugar h2 {
+        font-size: 14px;
+    }
+
+    .titulo-lugar span {
+        width: 20px;
+    }
+
+    .datos-lugar {
+        grid-template-columns: 1fr;
+    }
+
+    .dato {
+        padding: 18px;
+    }
+
+    .actividad-cards article {
+        min-height: 160px;
+    }
+
+}
+
+/* =========================================
+   MENÚ HAMBURGUESA
+========================================= */
+
+/* Botón hamburguesa oculto en computadora */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+
+/* =========================================
+   TABLETS Y CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    #barra {
+        height: 64px;
+        padding: 0 20px;
+        background: transparent;
+    }
+
+    #barra.mostrar {
+        background: #061526;
+    }
+
+    /* LOGO */
+    #barra .logo {
+        font-size: 30px;
+    }
+
+    /* MOSTRAR HAMBURGUESA */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* OCULTAR MENÚ NORMAL */
+    #barra .menu {
+        display: none;
+
+        position: absolute;
+        top: 64px;
+        left: 0;
+
+        width: 100%;
+
+        background: #061526;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        padding: 10px 0;
+
+        box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    }
+
+    /* CUANDO SE ABRE */
+    #barra .menu.activo {
+        display: flex;
+    }
+
+    /* ENLACES */
+    #barra .menu > a {
+        width: 100%;
+        text-align: center;
+
+        padding: 15px;
+
+        font-size: 13px;
+    }
+
+    /* IDIOMA */
+    #barra .idioma {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    #barra .boton-idioma {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* SUBMENÚ IDIOMA */
+    .opciones-idioma {
+        position: static;
+        width: 100%;
+
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .idioma:hover .opciones-idioma {
+        display: block;
+    }
+
+}

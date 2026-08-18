@@ -1,0 +1,1746 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f7f3;
+    color: #111;
+}
+
+#barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: #061526;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: 0.5s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+#barra.mostrar {
+    transform: translateY(0);
+}
+
+.logo {
+    color: white;
+    font-family: cursive;
+    font-size: 36px;
+    font-style: italic;
+    position: relative;
+    letter-spacing: -2px;
+}
+
+.flores {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -24px;
+    top: 0;
+}
+
+.flores i {
+    position: absolute;
+    width: 9px;
+    height: 14px;
+    border-radius: 70% 30% 70% 30%;
+}
+
+.rojo {
+    background: #d71920;
+    top: 0;
+    left: 8px;
+    transform: rotate(20deg);
+}
+
+.amarillo {
+    background: #f5c400;
+    top: 6px;
+    left: 1px;
+    transform: rotate(-35deg);
+}
+
+.azul {
+    background: #0057a8;
+    top: 10px;
+    left: 9px;
+    transform: rotate(35deg);
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #e7ae00;
+}
+
+.portada {
+    height: 570px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.portada > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.capa {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+.texto-portada {
+    position: absolute;
+    z-index: 2;
+    left: 7%;
+    top: 150px;
+}
+
+.texto-portada p {
+    font-family: cursive;
+    font-size: 35px;
+    font-style: italic;
+}
+
+.texto-portada h1 {
+    font-size: 68px;
+    line-height: 1;
+    text-shadow: 3px 3px 5px #222;
+}
+
+.texto-portada h2 {
+    font-size: 24px;
+    margin-top: 12px;
+}
+
+.texto-portada span {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.curva {
+    position: absolute;
+    z-index: 5;
+    bottom: -1px;
+    left: -5%;
+    width: 110%;
+    height: 85px;
+    background: #f2f2f2;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+main {
+    background: #f2f2f2;
+    padding: 20px 30px 0;
+}
+
+.seccion {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px 0 35px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: #123b70;
+    font-size: 21px;
+    margin-bottom: 25px;
+}
+
+.titulo span {
+    width: 40px;
+    height: 3px;
+    background: #e8b400;
+}
+
+.introduccion {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.texto {
+    background: #faf9f5;
+    border-radius: 14px;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
+
+.texto p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.texto p:last-child {
+    margin-bottom: 0;
+}
+
+.datos-san-andres {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.datos-san-andres div {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 18px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.datos-san-andres strong {
+    color: #123b70;
+    font-size: 13px;
+}
+
+.datos-san-andres p {
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+.historia {
+    background: #f8f7f3;
+    max-width: none;
+    padding-left: calc((100% - 1000px) / 2);
+    padding-right: calc((100% - 1000px) / 2);
+}
+
+.historia-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.historia-texto {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.historia-texto h3 {
+    color: #123b70;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.historia-texto p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.dato-historico {
+    background: #061f3e;
+    color: white;
+    border-radius: 14px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.numero {
+    color: #f2c000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.dato-historico p {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.lugares {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.lugar {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 14px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.lugar img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lugar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,0.8)
+    );
+}
+
+.lugar-texto {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    padding: 20px;
+}
+
+.lugar-texto h3 {
+    font-size: 17px;
+}
+
+.lugar-texto p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+
+.lugar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.cultura-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.cultura-card {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    text-align: center;
+    padding: 25px 18px;
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    background: #e8b400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.cultura-card h3 {
+    color: #123b70;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.cultura-card p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.razones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.razon {
+    background: #faf9f5;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    text-align: center;
+    padding: 20px 12px;
+}
+
+.razon strong {
+    font-size: 30px;
+}
+
+.razon h3 {
+    color: #123b70;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.razon p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 7px;
+}
+
+.final {
+    position: relative;
+    min-height: 220px;
+    background: #061f3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.curva-final {
+    position: absolute;
+    top: -45px;
+    left: -5%;
+    width: 110%;
+    height: 80px;
+    background: #f2f2f2;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.final-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.final h2 {
+    color: #f2c000;
+    font-family: cursive;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.final p {
+    font-size: 14px;
+    margin: 8px 0 18px;
+}
+
+.final a {
+    display: inline-block;
+    background: #f3b900;
+    color: #111;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+
+    #barra {
+        padding: 0 15px;
+        height: 58px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .menu {
+        gap: 4px;
+    }
+
+    .menu a {
+        font-size: 9px;
+        padding: 7px 5px;
+    }
+
+    .portada {
+        height: 540px;
+    }
+
+    .texto-portada {
+        left: 7%;
+        top: 130px;
+    }
+
+    .texto-portada p {
+        font-size: 28px;
+    }
+
+    .texto-portada h1 {
+        font-size: 48px;
+    }
+
+    .texto-portada h2 {
+        font-size: 19px;
+    }
+
+    .introduccion {
+        grid-template-columns: 1fr;
+    }
+
+    .historia {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .historia-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .lugares {
+        grid-template-columns: 1fr;
+    }
+
+    .cultura-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .razones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==================================================
+   CONFIGURACION GENERAL
+   ================================================== */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+/* ==================================================
+   CUERPO DE LA PAGINA
+   ================================================== */
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f8f7f3;
+
+    color: #111;
+
+}
+
+
+/* ==================================================
+   BARRA DE NAVEGACION
+   Al inicio es transparente
+   ================================================== */
+
+#barra {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 64px;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    z-index: 1000;
+
+    transition: background 0.5s;
+
+    box-shadow: none;
+
+}
+
+
+/* ==================================================
+   BARRA CUANDO SE HACE SCROLL
+   ================================================== */
+
+#barra.mostrar {
+
+    background: #061526;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+
+}
+
+
+/* ==================================================
+   LOGO "COLOMBIA"
+   ================================================== */
+
+.logo {
+
+    color: white;
+
+    font-family: cursive;
+
+    font-size: 36px;
+
+    font-style: italic;
+
+    position: relative;
+
+    letter-spacing: -2px;
+
+}
+
+
+/* ==================================================
+   FLORES DEL LOGO
+   ================================================== */
+
+.flores {
+
+    position: absolute;
+
+    width: 25px;
+
+    height: 25px;
+
+    right: -24px;
+
+    top: 0;
+
+}
+
+
+.flores i {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 14px;
+
+    border-radius: 70% 30% 70% 30%;
+
+}
+
+
+/* Flor roja */
+
+.rojo {
+
+    background: #d71920;
+
+    top: 0;
+
+    left: 8px;
+
+    transform: rotate(20deg);
+
+}
+
+
+/* Flor amarilla */
+
+.amarillo {
+
+    background: #f5c400;
+
+    top: 6px;
+
+    left: 1px;
+
+    transform: rotate(-35deg);
+
+}
+
+
+/* Flor azul */
+
+.azul {
+
+    background: #0057a8;
+
+    top: 10px;
+
+    left: 9px;
+
+}
+
+
+/* Flor verde */
+
+.verde {
+
+    background: #149447;
+
+    top: 13px;
+
+    left: 17px;
+
+}
+
+
+/* ==================================================
+   MENU PRINCIPAL
+   ================================================== */
+
+.menu {
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+}
+
+
+/* Enlaces del menu */
+
+.menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.menu a:hover {
+
+    background: #e7ae00;
+
+}
+
+
+/* Boton de inicio */
+
+.menu .inicio {
+
+    background: #f4bd00;
+
+    color: #111;
+
+}
+
+
+/* ==================================================
+   MENU DE IDIOMA
+   ================================================== */
+
+.idioma {
+
+    position: relative;
+
+}
+
+
+/* Boton idioma */
+
+.boton-idioma {
+
+    color: white;
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.boton-idioma:hover {
+
+    background: #e7ae00;
+
+    color: #111;
+
+}
+
+
+/* Opciones de idioma */
+
+.opciones-idioma {
+
+    position: absolute;
+
+    top: 40px;
+
+    right: 0;
+
+    background: #061526;
+
+    min-width: 120px;
+
+    border-radius: 6px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    overflow: hidden;
+
+    display: none;
+
+}
+
+
+/* Mostrar opciones */
+
+.idioma:hover .opciones-idioma {
+
+    display: block;
+
+}
+
+
+/* Enlaces de idioma */
+
+.opciones-idioma a {
+
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 14px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* Efecto de los idiomas */
+
+.opciones-idioma a:hover {
+
+    background: #e7ae00;
+
+    color: #111;
+
+}
+
+
+/* ==================================================
+   PORTADA PRINCIPAL
+   ================================================== */
+
+.portada {
+
+    height: 620px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+}
+
+
+/* ==================================================
+   IMAGEN DE PORTADA
+   ================================================== */
+
+.imagen-portada {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.35)
+        ),
+
+        url("../IMG/colombia\ 1.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* ==================================================
+   TEXTO DE PORTADA
+   ================================================== */
+
+.texto-portada {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 7%;
+
+    top: 120px;
+
+    width: 450px;
+
+}
+
+
+/* Texto de bienvenida */
+
+.bienvenida {
+
+    font-family: cursive;
+
+    font-style: italic;
+
+    font-size: 42px;
+
+    margin-bottom: -5px;
+
+}
+
+
+/* Titulo Colombia */
+
+.texto-portada h1 {
+
+    font-size: 68px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    text-shadow: 3px 3px 4px #222;
+
+}
+
+
+/* Subtitulo */
+
+.texto-portada h2 {
+
+    font-size: 22px;
+
+    margin-top: 10px;
+
+}
+
+
+/* Palabra belleza */
+
+.texto-portada h2 span {
+
+    color: #ffd000;
+
+}
+
+
+/* Descripcion */
+
+.descripcion {
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    margin-top: 18px;
+
+    width: 330px;
+
+    font-weight: bold;
+
+}
+
+
+/* ==================================================
+   CURVA DE LA PORTADA
+   ================================================== */
+
+.curva-portada {
+
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: -1px;
+
+    left: -5%;
+
+    width: 110%;
+
+    height: 90px;
+
+    background: #f2f2f2;
+
+    border-radius:
+
+        50% 50% 0 0 /
+
+        100% 100% 0 0;
+
+}
+
+
+/* ==================================================
+   CONTENIDO PRINCIPAL
+   ================================================== */
+
+main {
+
+    background: #f2f2f2;
+
+    padding: 20px 30px 0;
+
+}
+
+
+/* ==================================================
+   SECCIONES
+   ================================================== */
+
+.seccion {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 15px 0 30px;
+
+}
+
+
+/* ==================================================
+   TITULOS DE SECCION
+   ================================================== */
+
+.titulo-seccion {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    color: #123b70;
+
+    font-size: 21px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Lineas de los titulos */
+
+.titulo-seccion span {
+
+    width: 40px;
+
+    height: 3px;
+
+    background: #e8b400;
+
+    display: block;
+
+}
+
+
+/* ==================================================
+   DATOS GENERALES
+   ================================================== */
+
+.datos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    align-items: stretch;
+
+}
+
+
+/* ==================================================
+   TARJETAS DE DATOS
+   ================================================== */
+
+.dato {
+
+    min-height: 125px;
+
+    width: 100%;
+
+    border: 1px solid #ddd;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    padding: 10px;
+
+    background: #faf9f5;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    text-decoration: none;
+
+    color: #111;
+
+    display: block;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+/* Efecto de tarjeta */
+
+.dato:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.12);
+
+}
+
+
+/* ==================================================
+   ICONOS DE LOS DATOS
+   ================================================== */
+
+.icono {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #e6ae00;
+
+    color: white;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+/* Icono azul */
+
+.icono.azul {
+
+    background: #1976b9;
+
+}
+
+
+/* Icono verde */
+
+.icono.verde {
+
+    background: #319329;
+
+}
+
+
+/* Icono morado */
+
+.icono.morado {
+
+    background: #c0b6b6;
+
+}
+
+
+/* Titulo del dato */
+
+.dato h3 {
+
+    font-size: 12px;
+
+    margin-top: 8px;
+
+}
+
+
+/* Texto del dato */
+
+.dato p {
+
+    font-size: 12px;
+
+    margin-top: 5px;
+
+}
+
+
+/* ==================================================
+   DESTINOS DESTACADOS
+   ================================================== */
+
+.destinos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+
+/* ==================================================
+   TARJETAS DE DESTINOS
+   ================================================== */
+
+.destino {
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #111;
+
+    display: block;
+
+    border: 2px solid transparent;
+
+    border-radius: 14px;
+
+    padding: 10px;
+
+    transition: 0.3s;
+
+}
+
+
+/* Efecto de destino */
+
+.destino:hover {
+
+    border: 2px solid #ffd000;
+
+    transform: translateY(-5px);
+
+    background: white;
+
+    border-radius: 0 5px 15px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.12);
+
+}
+
+
+/* Imagen del destino */
+
+.destino img {
+
+    width: 100%;
+
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    display: block;
+
+}
+
+
+/* Nombre del destino */
+
+.destino h3 {
+
+    color: #143d70;
+
+    font-size: 13px;
+
+    margin-top: 7px;
+
+}
+
+
+/* Descripcion del destino */
+
+.destino p {
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    margin-top: 5px;
+
+}
+
+
+/* ==================================================
+   PARTE FINAL
+   ================================================== */
+
+.final {
+
+    position: relative;
+
+    min-height: 200px;
+
+    background: #061f3e;
+
+    color: white;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-top: 10px;
+
+}
+
+
+/* ==================================================
+   CURVA FINAL
+   ================================================== */
+
+.curva-final {
+
+    position: absolute;
+
+    top: -45px;
+
+    left: -5%;
+
+    width: 110%;
+
+    height: 80px;
+
+    background: #f8f7f3;
+
+    border-radius:
+
+        0 0 50% 50% /
+
+        0 0 100% 100%;
+
+}
+
+
+/* ==================================================
+   TEXTO FINAL
+   ================================================== */
+
+.final-texto {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 20px;
+
+}
+
+
+/* Titulo final */
+
+.final h2 {
+
+    font-family: cursive;
+
+    color: #f2c000;
+
+    font-size: 28px;
+
+    font-style: italic;
+
+}
+
+
+/* Texto final */
+
+.final p {
+
+    font-size: 15px;
+
+    margin: 5px 0 15px;
+
+}
+
+
+/* ==================================================
+   BOTON FINAL
+   ================================================== */
+
+.final button {
+
+    border: none;
+
+    background: #f3b900;
+
+    padding: 10px 25px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* ==================================================
+   PLANTAS DECORATIVAS
+   ================================================== */
+
+.plantas {
+
+    position: absolute;
+
+    font-size: 100px;
+
+    opacity: 0.8;
+
+}
+
+
+/* Planta izquierda */
+
+.izquierda {
+
+    left: -15px;
+
+    bottom: -25px;
+
+}
+
+
+/* Planta derecha */
+
+.derecha {
+
+    right: -15px;
+
+    bottom: -25px;
+
+}
+
+
+/* =========================================
+   DISEÑO RESPONSIVO
+   TABLETS Y CELULARES
+========================================= */
+
+@media (max-width: 900px) {
+
+    /* ---------- MENÚ ---------- */
+
+    #barra {
+        padding: 15px 25px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+
+    /* ---------- BANNER ---------- */
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 55px;
+    }
+
+    .hero-overlay p {
+        font-size: 16px;
+    }
+
+
+    /* ---------- LUGARES ---------- */
+
+    .destinos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 25px;
+    }
+
+    .destino {
+        height: 300px;
+    }
+
+
+    /* ---------- ACTIVIDADES ---------- */
+
+    .actividad-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        padding: 0 25px;
+    }
+
+    .actividad {
+        padding: 25px 15px;
+    }
+
+
+    /* ---------- RAZONES ---------- */
+
+    .razones {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- BARRA ---------- */
+
+    #barra {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 11px;
+        padding: 8px 5px;
+    }
+
+
+    /* ---------- BANNER ---------- */
+
+    .hero {
+        height: 420px;
+    }
+
+    .hero-overlay {
+        padding: 20px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 42px;
+        line-height: 1;
+    }
+
+    .hero-overlay p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+
+    /* ---------- TÍTULOS ---------- */
+
+    .titulo {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .titulo span {
+        width: 35px;
+    }
+
+    .titulo h2 {
+        font-size: 17px;
+    }
+
+
+    /* ---------- LUGARES IMPERDIBLES ---------- */
+
+    .seccion {
+        padding: 30px 15px;
+    }
+
+    .destinos {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0;
+    }
+
+    .destino {
+        height: 280px;
+    }
+
+    .destino-info h3 {
+        font-size: 17px;
+    }
+
+    .destino-info p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- ACTIVIDADES ---------- */
+
+    .actividades {
+        margin-top: 45px;
+        padding: 30px 15px;
+    }
+
+    .actividad-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0;
+    }
+
+    .actividad {
+        min-height: 220px;
+        padding: 25px;
+    }
+
+    .actividad-icono {
+        width: 70px;
+        height: 70px;
+    }
+
+    .actividad h3 {
+        font-size: 17px;
+    }
+
+    .actividad p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- POR QUÉ VISITAR ---------- */
+
+    .porque {
+        padding: 35px 15px;
+    }
+
+    .porque .titulo h2 {
+        font-size: 16px;
+    }
+
+    .razones {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* ---------- BANNER FINAL ---------- */
+
+    .final {
+        height: 300px;
+    }
+
+    .final-text h2 {
+        font-size: 32px;
+    }
+
+}

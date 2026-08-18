@@ -1,0 +1,1829 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f7f7f7; 
+    color: #222;
+    line-height: 1.6; 
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+section{
+    padding: 70px 8%;
+}
+
+h2{
+    text-align: center;
+    font-size: 2.3rem;
+    color: #003366;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after{
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #FCD116;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+header{
+    background: #001B44;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+.navbar{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo h2{
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.logo h2::after{
+    display: none;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.menu a:hover{
+    background: #FCD116;
+    color: #001B44;
+}
+
+.menu .activo{
+    background: #CE1126;
+    color: white;
+}
+
+/*  HERO PORTADA*/
+
+.hero{
+    position: relative; 
+    height: 85vh;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.fondo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    filter: brightness(.55);
+}
+
+.hero-contenido{
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,.4);
+}
+
+.hero p{
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+/* GASTRONOMÍA */
+
+.gastronomia{
+    background: #FFF8E8;
+}
+
+/* =========================
+   TARJETAS DE GASTRONOMÍA
+========================= */
+
+.contenedor-tarjetas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tarjeta{
+    position: relative;
+    height: 430px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,.18);
+    transition: .4s;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 20px 20px;
+}
+
+/* Imagen ocupando toda la tarjeta */
+.tarjeta img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: .5s;
+}
+
+/* Degradado oscuro sobre la imagen */
+.tarjeta::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.90) 0%,
+        rgba(0,0,0,.65) 35%,
+        rgba(0,0,0,.15) 70%,
+        rgba(0,0,0,.05) 100%
+    );
+    z-index: 1;
+}
+
+/* El contenido queda encima de la imagen */
+.tarjeta h3,
+.tarjeta p{
+    position: relative;
+    z-index: 2;
+}
+
+/* Título */
+.tarjeta h3{
+    color: white;
+    text-align: left;
+    margin: 0 0 4px;
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+/* Descripción */
+.tarjeta p{
+    padding: 0;
+    margin: 8px 0 18px;
+    color: white;
+    font-size: .95rem;
+    line-height: 1.45;
+    text-align: left;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.25);
+}
+
+.tarjeta:hover img{
+    transform: scale(1.06);
+}
+
+/* Separador decorativo */
+.gastronomia::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right,
+        #FCD116 0%,
+        #FCD116 33%,
+        #003893 33%,
+        #003893 66%,
+        #CE1126 66%,
+        #CE1126 100%);
+    margin-top: 60px;
+}
+
+/*  RESPONSIVE (PARTE 1) */
+
+@media(max-width: 900px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu{
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero{
+        height: 70vh;
+    }
+
+    .hero h1{
+        font-size: 2.8rem;
+    }
+
+    .hero p{
+        font-size: 1.05rem;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 600px){}
+
+    .hero h1{
+        font-size: 2.2rem;
+    }
+
+    .hero p{
+        font-size: .95rem;
+    }
+
+    section{
+        padding: 60px 6%;
+    }
+
+    /*  SECCIÓN CULTURA */
+
+.cultura{
+    padding:80px 10%;
+    background:#f4f8f5;
+}
+
+.cultura h2{
+    text-align:center;
+    font-size:2.3rem;
+    color:#003893;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.cultura h2::after{
+    content:"";
+    display:block;
+    width:100px;
+    height:4px;
+    background:#FCD116;
+    margin:15px auto 0;
+    border-radius:5px;
+}
+
+/* =========================
+   TARJETAS DE CULTURA
+========================= */
+
+.contenedor-cultura{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.caja{
+    position: relative;
+    height: 430px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,.18);
+    transition: .4s;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 20px 20px;
+}
+
+.caja img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: .5s;
+}
+
+.caja::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.90) 0%,
+        rgba(0,0,0,.65) 35%,
+        rgba(0,0,0,.15) 70%,
+        rgba(0,0,0,.05) 100%
+    );
+    z-index: 1;
+}
+
+.caja h3,
+.caja p{
+    position: relative;
+    z-index: 2;
+}
+
+.caja h3{
+    color: white;
+    text-align: left;
+    margin: 0 0 5px;
+    font-size: 1.35rem;
+}
+
+.caja p{
+    padding: 0;
+    margin: 8px 0 18px;
+    color: white;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.caja:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.25);
+}
+
+.caja:hover img{
+    transform: scale(1.06);
+}
+
+/* =========================
+   BOTÓN DE LAS TARJETAS
+========================= */
+
+.btn-tarjeta{
+    position: relative;
+    z-index: 2;
+    align-self: flex-start;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: #CE1126;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: .9rem;
+    transition: .3s;
+}
+
+#amarillo {
+    background: #f5c400;
+}
+
+#azul {
+    background: #08377e;
+}
+
+#rojo {
+    background: #d71920;
+}
+
+#amarillo1 {
+    background: #f5c400;
+}
+
+#azul1 {
+    background: #08377e;
+}
+
+#rojo1 {
+    background: #d71920;
+}
+
+/*   CURIOSIDADES */
+
+.curiosidades{
+    padding:80px 10%;
+    background:white;
+}
+
+.curiosidades h2{
+    text-align:center;
+    font-size:2.3rem;
+    color:#003893;
+    margin-bottom:50px;
+}
+
+.contenedor-curiosidades{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.dato{
+    background:#fafafa;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    transition:.4s;
+    border:2px solid transparent;
+}
+
+.dato:hover{
+    border-color:#FCD116;
+    transform:translateY(-10px);
+}
+
+.dato i{
+    width:90px;
+    height:90px;
+    line-height:90px;
+    border-radius:50%;
+    background:#FCD116;
+    color:#003893;
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.dato h3{
+    color:#003893;
+    margin-bottom:15px;
+}
+
+.dato p{
+    color:#555;
+    line-height:1.7;
+}
+
+/* ===================================
+        FOOTER
+=================================== */
+
+footer{
+    background:#001b44;
+    color:white;
+    text-align:center;
+    padding:60px 10%;
+}
+
+footer h2{
+    font-size:2rem;
+    margin-bottom:15px;
+    color:white;
+}
+
+footer p{
+    color:#d8d8d8;
+    margin-bottom:30px;
+}
+
+.redes{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.redes i{
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border-radius:50%;
+    background:#FCD116;
+    color:#003893;
+    font-size:1.3rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.redes i:hover{
+    background:#CE1126;
+    color:white;
+    transform:scale(1.15);
+}
+
+/* ===================================
+        SCROLL SUAVE
+=================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===================================
+      NAVBAR 
+=================================== */
+
+/* ===================================
+        NAVBAR
+   =================================== */
+
+#barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+
+    /* Transparente al inicio */
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    z-index: 1000;
+
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+/* ===================================
+      NAVBAR AL HACER SCROLL
+   =================================== */
+
+#barra.mostrar {
+    background: #061526;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+
+/* ===================================
+        LOGO
+   =================================== */
+
+#barra .logo {
+    color: white;
+    font-family: cursive;
+    font-size: 36px;
+    font-style: italic;
+
+    position: relative;
+
+    letter-spacing: -2px;
+}
+
+
+/* ===================================
+        FLORES DEL LOGO
+   =================================== */
+
+#barra .flores {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    right: -24px;
+    top: 0;
+}
+
+#barra .flores i {
+    position: absolute;
+
+    width: 9px;
+    height: 14px;
+
+    border-radius: 70% 30% 70% 30%;
+}
+
+
+/* ROJO */
+
+#barra .rojo {
+    background: #d71920;
+
+    top: 0;
+    left: 8px;
+
+    transform: rotate(20deg);
+}
+
+
+/* AMARILLO */
+
+#barra .amarillo {
+    background: #f5c400;
+
+    top: 6px;
+    left: 1px;
+
+    transform: rotate(-35deg);
+}
+
+
+/* AZUL */
+
+#barra .azul {
+    background: #0057a8;
+
+    top: 10px;
+    left: 9px;
+
+    transform: rotate(35deg);
+}
+
+
+/* VERDE */
+
+
+
+
+/* ===================================
+        MENU
+   =================================== */
+
+#barra .menu {
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+    flex-direction: row;
+}
+
+
+/* ENLACES */
+
+#barra .menu > a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+
+/* HOVER */
+
+#barra .menu > a:hover {
+    background: #e7ae00;
+
+    color: white;
+}
+
+
+/* CULTURA ACTIVA */
+
+#barra .menu .cultura {
+    background: rgb(13, 23, 104);
+
+    color: #fff;
+}
+
+
+/* ===================================
+        BOTON IDIOMA
+   =================================== */
+
+.idioma {
+    position: relative;
+}
+
+
+/* BOTÓN */
+
+.boton-idioma {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* HOVER BOTÓN */
+
+.boton-idioma:hover {
+    background: #e7ae00;
+
+    color: white;
+}
+
+
+/* ===================================
+        OPCIONES DE IDIOMA
+   =================================== */
+
+.opciones-idioma {
+    position: absolute;
+
+    top: 100%;
+    right: 0;
+
+    min-width: 130px;
+
+    background: #061526;
+
+    border-radius: 5px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition: 0.3s;
+}
+
+
+/* MOSTRAR OPCIONES */
+
+.idioma:hover .opciones-idioma {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ENLACES DEL IDIOMA */
+
+.opciones-idioma a {
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* HOVER OPCIONES */
+
+.opciones-idioma a:hover {
+    background: #e7ae00;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLETS Y PANTALLAS MEDIANAS
+   ========================================================= */
+
+@media screen and (max-width: 992px) {
+
+    /* NAVBAR */
+
+    
+    #barra {
+        padding: 0 25px;
+    }
+
+    #barra .logo {
+        font-size: 30px;
+    }
+
+  
+
+    #barra .menu > a,
+    .boton-idioma {
+        font-size: 11px;
+        padding: 8px 9px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero p {
+        width: 90%;
+        margin: auto;
+        font-size: 1.1rem;
+    }
+
+
+    /* GASTRONOMÍA */
+
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* CULTURA */
+
+    .contenedor-cultura {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* CURIOSIDADES */
+
+    .contenedor-curiosidades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* NAVBAR */
+
+    #barra {
+        height: auto;
+        min-height: 60px;
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+
+    #barra .logo {
+        font-size: 27px;
+    }
+
+    #barra .menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    #barra .menu > a,
+    .boton-idioma {
+        font-size: 10px;
+        padding: 7px 6px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        height: 70vh;
+        min-height: 450px;
+        padding: 0 5%;
+    }
+
+    .hero-contenido {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+
+    /* SECCIONES */
+
+    section {
+        padding: 60px 7%;
+    }
+
+    .gastronomia,
+    .cultura,
+    .curiosidades {
+        padding: 60px 7%;
+    }
+
+
+    /* TÍTULOS */
+
+    h2,
+    .cultura h2,
+    .curiosidades h2 {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+
+
+    /* GASTRONOMÍA */
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .tarjeta {
+        width: 100%;
+        max-width: 500px;
+        height: 400px;
+        margin: auto;
+    }
+
+
+    /* CULTURA */
+
+    .contenedor-cultura {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .caja {
+        width: 100%;
+        max-width: 500px;
+        height: 400px;
+        margin: auto;
+    }
+
+
+    /* CURIOSIDADES */
+
+    .contenedor-curiosidades {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dato {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 50px 7%;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    footer p {
+        font-size: .9rem;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    /* NAVBAR */
+
+    #barra {
+        padding: 8px 10px;
+    }
+
+    #barra .logo {
+        font-size: 24px;
+    }
+
+    #barra .flores {
+        transform: scale(.8);
+        transform-origin: left top;
+    }
+
+    #barra .menu {
+        gap: 2px;
+    }
+
+    #barra .menu > a,
+    .boton-idioma {
+        font-size: 9px;
+        padding: 6px 5px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        height: 65vh;
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+
+
+    /* SECCIONES */
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .gastronomia,
+    .cultura,
+    .curiosidades {
+        padding: 50px 5%;
+    }
+
+
+    /* TÍTULOS */
+
+    h2,
+    .cultura h2,
+    .curiosidades h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+
+    /* TARJETAS */
+
+    .tarjeta {
+        height: 380px;
+        padding: 0 15px 18px;
+    }
+
+    .caja {
+        height: 380px;
+        padding: 0 15px 18px;
+    }
+
+    .tarjeta h3,
+    .caja h3 {
+        font-size: 1.2rem;
+    }
+
+    .tarjeta p,
+    .caja p {
+        font-size: .9rem;
+        line-height: 1.4;
+    }
+
+
+    /* BOTONES */
+
+    .btn-tarjeta {
+        padding: 8px 15px;
+        font-size: .8rem;
+    }
+
+
+    /* CURIOSIDADES */
+
+    .dato {
+        padding: 30px 20px;
+    }
+
+    .dato i {
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+        font-size: 2rem;
+    }
+
+    .dato h3 {
+        font-size: 1.2rem;
+    }
+
+    .dato p {
+        font-size: .9rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 40px 5%;
+    }
+
+    footer h2 {
+        font-size: 1.2rem;
+    }
+
+    footer p {
+        font-size: .8rem;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media screen and (max-width: 360px) {
+
+    #barra .logo {
+        font-size: 21px;
+    }
+
+    #barra .menu > a,
+    .boton-idioma {
+        font-size: 8px;
+        padding: 5px 4px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        font-size: .85rem;
+    }
+
+    h2,
+    .cultura h2,
+    .curiosidades h2 {
+        font-size: 1.6rem;
+    }
+
+    .tarjeta,
+    .caja {
+        height: 350px;
+    }
+
+}
+
+/* =========================================
+   BOTÓN MENÚ HAMBURGUESA
+========================================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   MENÚ EN CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    #barra {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .menu.activo {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+}
+
+
+
+/* =========================================
+   DISEÑO RESPONSIVO
+   TABLETS Y CELULARES
+========================================= */
+
+@media (max-width: 900px) {
+
+    /* ---------- MENÚ ---------- */
+
+    #barra {
+        padding: 15px 25px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+
+    /* ---------- BANNER ---------- */
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 55px;
+    }
+
+    .hero-overlay p {
+        font-size: 16px;
+    }
+
+
+    /* ---------- LUGARES ---------- */
+
+    .destinos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 25px;
+    }
+
+    .destino {
+        height: 300px;
+    }
+
+
+    /* ---------- ACTIVIDADES ---------- */
+
+    .actividad-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        padding: 0 25px;
+    }
+
+    .actividad {
+        padding: 25px 15px;
+    }
+
+
+    /* ---------- RAZONES ---------- */
+
+    .razones {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- BARRA ---------- */
+
+   #barra {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 64px;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    z-index: 1000;
+
+    transition: background 0.5s;
+
+    box-shadow: none;
+
+}
+
+
+/* ==================================================
+   BARRA CUANDO SE HACE SCROLL
+   ================================================== */
+  #barra.menu{
+
+    display: none;
+  }
+
+  #barra.menu.activo{
+
+    display: flex;
+  }
+
+   #barra.mostrar {
+
+    background: #061526;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+
+}
+.logo {
+
+    color: white;
+
+    font-family: cursive;
+
+    font-size: 36px;
+
+    font-style: italic;
+
+    position: relative;
+
+    letter-spacing: -2px;
+
+}
+
+
+.flores {
+
+    position: absolute;
+
+    width: 25px;
+
+    height: 25px;
+
+    right: -24px;
+
+    top: 0;
+
+}
+
+
+.flores i {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 14px;
+
+    border-radius: 70% 30% 70% 30%;
+
+}
+
+
+.rojo {
+
+    background: #d71920;
+
+    top: 0;
+
+    left: 8px;
+
+    transform: rotate(20deg);
+
+}
+
+
+.amarillo {
+
+    background: #f5c400;
+
+    top: 6px;
+
+    left: 1px;
+
+    transform: rotate(-35deg);
+
+}
+
+#barra .azul {
+    background: #0057a8;
+
+    top: 10px;
+    left: 9px;
+
+    transform: rotate(35deg);
+}
+
+
+
+
+
+.menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+}
+
+
+.menu a:hover {
+
+    background: #e7ae00;
+
+}
+
+
+.menu .cultura {
+
+    background: #001B44;
+
+    color: #111;
+
+}
+
+
+/* MENU DE IDIOMA */
+
+.idioma {
+
+    position: relative;
+
+    padding-bottom: 10px;
+
+}
+
+
+.boton-idioma {
+
+    color: white;
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.boton-idioma:hover {
+
+    background: #e7ae00;
+
+    color: #111;
+
+}
+
+
+.opciones-idioma {
+
+    position: absolute;
+
+    top: 40px;
+
+    right: 0;
+
+    background: #061526;
+
+    min-width: 120px;
+
+    border-radius: 6px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    overflow: hidden;
+
+    display: none;
+
+}
+
+
+.idioma:hover .opciones-idioma {
+
+    display: block;
+
+}
+
+
+.opciones-idioma a {
+
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 14px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.opciones-idioma a:hover {
+
+    background: #e7ae00;
+
+    color: #111;
+
+}
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 11px;
+        padding: 8px 5px;
+    }
+
+
+    /* ---------- BANNER ---------- */
+
+    .hero {
+        height: 420px;
+    }
+
+    .hero-overlay {
+        padding: 20px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 42px;
+        line-height: 1;
+    }
+
+    .hero-overlay p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+
+    /* ---------- TÍTULOS ---------- */
+
+    .titulo {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .titulo span {
+        width: 35px;
+    }
+
+    .titulo h2 {
+        font-size: 17px;
+    }
+
+
+    /* ---------- LUGARES IMPERDIBLES ---------- */
+
+    .seccion {
+        padding: 30px 15px;
+    }
+
+    .destinos {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0;
+    }
+
+    .destino {
+        height: 280px;
+    }
+
+    .destino-info h3 {
+        font-size: 17px;
+    }
+
+    .destino-info p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- ACTIVIDADES ---------- */
+
+    .actividades {
+        margin-top: 45px;
+        padding: 30px 15px;
+    }
+
+    .actividad-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0;
+    }
+
+    .actividad {
+        min-height: 220px;
+        padding: 25px;
+    }
+
+    .actividad-icono {
+        width: 70px;
+        height: 70px;
+    }
+
+    .actividad h3 {
+        font-size: 17px;
+    }
+
+    .actividad p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- POR QUÉ VISITAR ---------- */
+
+    .porque {
+        padding: 35px 15px;
+    }
+
+    .porque .titulo h2 {
+        font-size: 16px;
+    }
+
+    .razones {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* ---------- BANNER FINAL ---------- */
+
+    .final {
+        height: 300px;
+    }
+
+    .final-text h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================================
+   CORRECCIÓN MENÚ HAMBURGUESA (ESPECIFICIDAD)
+   El archivo tiene varias reglas repetidas para
+   #barra y .menu a lo largo del CSS. Para que el
+   menú hamburguesa funcione sin importar el orden
+   de esas reglas anteriores, esta sección final
+   usa !important y va al final del archivo.
+========================================= */
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    /* Fondo sólido siempre en celular, para que el
+       icono blanco se vea aunque no se haya scrolleado */
+    #barra {
+        background: #061526 !important;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        color: white !important;
+        font-size: 26px !important;
+        z-index: 1100;
+    }
+
+    #barra .menu {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+        background: #061526;
+        z-index: 1000;
+    }
+
+    #barra .menu.activo {
+        display: flex !important;
+    }
+
+    #barra .menu > a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+}

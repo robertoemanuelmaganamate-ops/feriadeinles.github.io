@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flower Festival</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../CSS/feriadelasflores.CSS">
+  <link rel="icon" href="../IMG/world.png" type="image/x-icon">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav id="barra">
+
+    <div class="logo">
+        Colombia
+
+        <span class="flores">
+            <i class="rojo"></i>
+            <i class="amarillo"></i>
+            <i class="azul"></i>
+            <i class="verde"></i>
+        </span>
+    </div>
+
+    <div class="menu">
+
+        <a href="indexi-i.html" class="inicio">
+            HOME
+        </a>
+
+        <a href="cultura-i.html" class="cultura">
+            CULTURE
+        </a>
+
+        <a href="turismo-i.html" class="turismo">
+            TOURISM
+        </a>
+
+        <div class="idioma">
+
+            <button class="boton-idioma">
+                LANGUAGE
+            </button>
+
+            <div class="opciones-idioma">
+
+                <a href="feriadelasflores.html">
+                    SPANISH
+                </a>
+
+                <a href="../HTML/festivaldelasflores-i.html">
+                    ENGLISH
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          MEDELLÍN · COLOMBIA
+        </p>
+
+        <h1>
+          Flower<br>
+          Festival
+        </h1>
+
+        <p class="hero-text">
+          The most colorful celebration<br>
+          in <strong>Colombia</strong>
+        </p>
+
+        <a href="#festival" class="btn">
+          Learn More
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- INFO -->
+
+    <section id="festival" class="about">
+
+      <p class="section-label">
+        ABOUT THE FESTIVAL
+      </p>
+
+      <h2>
+        A tradition that blooms
+      </h2>
+
+      <p class="intro">
+        The Flower Festival is a tribute to the culture,
+        traditions, and beauty of Colombia.
+      </p>
+
+
+      <div class="info-grid">
+
+        <article class="info-item">
+
+          <div class="icon">
+            📅
+          </div>
+
+          <h3>
+            When
+          </h3>
+
+          <p>
+            August<br>
+            <span>Main dates</span>
+          </p>
+
+        </article>
+
+
+        <article class="info-item">
+
+          <div class="icon">
+            📍
+          </div>
+
+          <h3>
+            Where
+          </h3>
+
+          <p>
+            Medellín,<br>
+            <span>Antioquia, Colombia</span>
+          </p>
+
+        </article>
+
+
+        <article class="info-item">
+
+          <div class="icon">
+            ✿
+          </div>
+
+          <h3>
+            What is it?
+          </h3>
+
+          <p>
+            Parades, concerts,<br>
+            <span>exhibitions, and more.</span>
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- EVENTS -->
+
+    <section id="eventos" class="events">
+
+      <p class="section-label">
+        THE BEST OF THE FESTIVAL
+      </p>
+
+      <h2>
+        Enjoy unforgettable moments
+      </h2>
+
+
+      <div class="cards">
+
+        <article class="card">
+
+          <img
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80"
+            alt="Colorful flowers">
+
+          <div class="card-title">
+            Silleteros Parade
+          </div>
+
+        </article>
+
+
+        <article class="card">
+
+          <img
+            src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80"
+            alt="Concert">
+
+          <div class="card-title">
+            Concerts
+          </div>
+
+        </article>
+
+
+        <article class="card">
+
+          <img
+            src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=900&q=80"
+            alt="Orchid">
+
+          <div class="card-title">
+            Exhibitions
+          </div>
+
+        </article>
+
+
+        <article class="card">
+
+          <img
+            src="../IMG/tradiciones.jpeg"
+            alt="Colombian culture">
+
+          <div class="card-title">
+            Culture and Tradition
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2 id="h2">
+      Colombia, a country full of culture and tradition.
+    </h2>
+
+    <p>
+      English Fair - Colombia - Developed by B1DB students
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    (function () {
+
+        const botonHamburguesaFF =
+            document.getElementById("menu-toggle");
+
+        const menuNavegacionFF =
+            document.querySelector("#barra .menu");
+
+        if (!botonHamburguesaFF || !menuNavegacionFF) return;
+
+        botonHamburguesaFF.addEventListener("click", (evento) => {
+
+            evento.stopPropagation();
+
+            menuNavegacionFF.classList.toggle("activo");
+
+        });
+
+
+        menuNavegacionFF.querySelectorAll("a").forEach((enlace) => {
+
+            enlace.addEventListener("click", () => {
+
+                menuNavegacionFF.classList.remove("activo");
+
+            });
+
+        });
+
+
+        document.addEventListener("click", (evento) => {
+
+            const clicFuera =
+                !menuNavegacionFF.contains(evento.target) &&
+                !botonHamburguesaFF.contains(evento.target);
+
+            if (clicFuera) {
+
+                menuNavegacionFF.classList.remove("activo");
+
+            }
+
+        });
+
+    })();
+
+  </script>
+
+</body>
+
+</html>
